@@ -6,49 +6,79 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".view.MainActivity">
     <FrameLayout
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radioGroup"
+        android:layout_alignParentTop="true">
 
     </FrameLayout>
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:gravity="fill_horizontal"
-        android:background="@color/navigationBar">
+        android:background="@color/navigationBar"
+        android:id="@+id/radioGroup">
 
         <RadioButton
-            android:id="@+id/rbChat"
+            android:id="@+id/tradeTabBtn"
+            android:background="@drawable/tab_bgs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:button="@null"
             android:checked="true"
-            android:drawableTop="@drawable/trade_focus"
+            android:drawableTop="@drawable/tab_icon_trade"
             android:gravity="center_horizontal|bottom"
-            android:paddingTop="2dp"
+            android:paddingTop="5dp"
+            android:text="交易"
+            android:textColor="@drawable/tabcolors" />
 
-            android:text="微信"
-            android:textColor="@color/unselectedGrey" />
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="交易"/>
+            android:id="@+id/contactsTabBtn"
+            android:background="@drawable/tab_bgs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_icon_contacts"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="5dp"
+            android:text="通讯录"
+            android:textColor="@drawable/tabcolors" />
+
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="通讯录"/>
+            android:id="@+id/scheduleTabBtn"
+            android:background="@drawable/tab_bgs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_icon_schedule"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="5dp"
+            android:text="日程"
+            android:textColor="@drawable/tabcolors" />
+
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="日程"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="我"/>
+            android:id="@+id/meTabBtn"
+            android:background="@drawable/tab_bgs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/tab_icon_me"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="5dp"
+            android:text="我"
+            android:textColor="@drawable/tabcolors" />
     </RadioGroup>
 </RelativeLayout>
