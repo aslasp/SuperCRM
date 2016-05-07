@@ -5,6 +5,9 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".view.MainActivity">
+
+
+
     <FrameLayout
         android:id="@+id/main_content"
         android:layout_width="match_parent"

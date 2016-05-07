@@ -40,6 +40,7 @@ public class LoginActivity extends Activity {
             intent.putExtra("pswd",pswd);
             intent.setClass(LoginActivity.this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }
