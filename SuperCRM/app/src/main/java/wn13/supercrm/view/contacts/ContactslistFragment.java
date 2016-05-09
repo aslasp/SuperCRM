@@ -11,25 +11,14 @@ import android.widget.TextView;
 import wn13.supercrm.R;
 
 public class ContactslistFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "userID";
 
-
-    // TODO: Rename and change types of parameters
     private String userID;
-
 
     public ContactslistFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     * @return A new instance of fragment ContactslistFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ContactslistFragment newInstance(String userID) {
         ContactslistFragment fragment = new ContactslistFragment();
         Bundle args = new Bundle();

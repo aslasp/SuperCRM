@@ -1,11 +1,13 @@
 package wn13.supercrm.view;
 
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.RadioGroup;
 
 import wn13.supercrm.R;
@@ -19,10 +21,7 @@ import wn13.supercrm.view.trade.AddTradeActivity;
 import wn13.supercrm.view.trade.TradelistFragment;
 
 public class MainActivity extends AppCompatActivity{
-    TradelistFragment tradelistFragment;
-    ContactslistFragment contactslistFragment;
-    SchedulelistFragment schedulelistFragment;
-    MelistFragment melistFragment;
+    Fragment fragment;
     String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +31,8 @@ public class MainActivity extends AppCompatActivity{
 
         Intent intent=getIntent();
         userID=intent.getStringExtra("id");
-        tradelistFragment=TradelistFragment.newInstance(userID);
-        getFragmentManager().beginTransaction().replace(R.id.main_content,tradelistFragment).commit();
+        fragment=TradelistFragment.newInstance(userID);
+        getFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
 
 
         RadioGroup rg=(RadioGroup)findViewById(R.id.radioGroup);
@@ -42,20 +41,22 @@ public class MainActivity extends AppCompatActivity{
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.tradeTabBtn:{
-                        tradelistFragment=TradelistFragment.newInstance(userID);
-                        getFragmentManager().beginTransaction().replace(R.id.main_content,tradelistFragment).commit();
+                        fragment=TradelistFragment.newInstance(userID);
+                        getFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+
                     }break;
                     case R.id.contactsTabBtn:{
-                        contactslistFragment=ContactslistFragment.newInstance(userID);
-                        getFragmentManager().beginTransaction().replace(R.id.main_content,contactslistFragment).commit();
+                        fragment=ContactslistFragment.newInstance(userID);
+                        getFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+
                     }break;
                     case R.id.scheduleTabBtn:{
-                        schedulelistFragment=SchedulelistFragment.newInstance(userID);
-                        getFragmentManager().beginTransaction().replace(R.id.main_content,schedulelistFragment).commit();
+                        fragment=SchedulelistFragment.newInstance(userID);
+                        getFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
                     }break;
                     case R.id.meTabBtn:{
-                        melistFragment=MelistFragment.newInstance(userID);
-                        getFragmentManager().beginTransaction().replace(R.id.main_content,melistFragment).commit();
+                        fragment=MelistFragment.newInstance(userID);
+                        getFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
                     }break;
                 }
             }
