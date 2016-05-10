@@ -1,11 +1,13 @@
 package wn13.supercrm.view.trade;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -52,4 +54,5 @@ public class TradelistFragment extends Fragment {
         inflater.inflate(R.menu.menu_trade_history,menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
+
 }

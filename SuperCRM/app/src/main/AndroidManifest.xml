@@ -22,7 +22,8 @@
         <activity android:name=".view.SearchActivity" />
         <activity android:name=".view.schedule.AddScheduleActivity" />
         <activity android:name=".view.contacts.AddCustomerActivity" />
-        <activity android:name=".view.contacts.AddContactActivity"></activity>
+        <activity android:name=".view.contacts.AddContactActivity" />
+        <activity android:name=".view.trade.TradeHistoryActivity"></activity>
     </application>
 
 </manifest>

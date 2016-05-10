@@ -18,6 +18,7 @@ import wn13.supercrm.view.me.MelistFragment;
 import wn13.supercrm.view.schedule.AddScheduleActivity;
 import wn13.supercrm.view.schedule.SchedulelistFragment;
 import wn13.supercrm.view.trade.AddTradeActivity;
+import wn13.supercrm.view.trade.TradeHistoryActivity;
 import wn13.supercrm.view.trade.TradelistFragment;
 
 public class MainActivity extends AppCompatActivity{
@@ -92,6 +93,10 @@ public class MainActivity extends AppCompatActivity{
             }break;
             case R.id.addCustomerBtn:{
                 i.setClass(MainActivity.this, AddCustomerActivity.class);
+                startActivity(i);
+            }break;
+            case R.id.tradeHistoryBtn:{
+                i.setClass(MainActivity.this, TradeHistoryActivity.class);
                 startActivity(i);
             }break;
         }
