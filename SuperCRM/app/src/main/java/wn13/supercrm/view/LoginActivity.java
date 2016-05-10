@@ -34,13 +34,11 @@ public class LoginActivity extends Activity {
     private void loginCheck(){
         String id=idFld.getText().toString();
         String pswd=pswdFld.getText().toString();
-        if((!id.equals(""))&&(!pswd.equals(""))){
-            Intent intent=new Intent();
-            intent.putExtra("id",id);
-            intent.putExtra("pswd",pswd);
-            intent.setClass(LoginActivity.this,MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        Intent intent=new Intent();
+        intent.putExtra("id",id);
+        intent.putExtra("pswd",pswd);
+        intent.setClass(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

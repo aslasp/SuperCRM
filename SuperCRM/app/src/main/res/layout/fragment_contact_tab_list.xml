@@ -2,12 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="wn13.supercrm.view.trade.TradelistFragment">
+    tools:context="wn13.supercrm.view.contacts.ContactTabListFragment">
 
-    <ListView
-        android:id="@+id/tradeListView"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
 
-    </ListView>
 </FrameLayout>

@@ -1,14 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contactsTabsContainer"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="0dp"
     tools:context="wn13.supercrm.view.contacts.ContactslistFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/test_hehe"
+    <LinearLayout
+        android:layout_margin="0dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="this is contacts" />
+        android:orientation="vertical">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/contactsTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabMode="fixed"/>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/contactsViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-</FrameLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
