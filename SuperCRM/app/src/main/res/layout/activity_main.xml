@@ -29,7 +29,6 @@
 
         <RadioButton
             android:id="@+id/tradeTabBtn"
-            android:background="@drawable/tab_bgs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -44,7 +43,6 @@
 
         <RadioButton
             android:id="@+id/contactsTabBtn"
-            android:background="@drawable/tab_bgs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -58,7 +56,6 @@
 
         <RadioButton
             android:id="@+id/scheduleTabBtn"
-            android:background="@drawable/tab_bgs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -72,7 +69,6 @@
 
         <RadioButton
             android:id="@+id/meTabBtn"
-            android:background="@drawable/tab_bgs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

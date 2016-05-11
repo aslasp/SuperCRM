@@ -56,11 +56,12 @@ public class TradelistFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        listItems.clear();
         View rootView=inflater.inflate(R.layout.fragment_tradelist, container, false);
         setHasOptionsMenu(true);
-        ListView listView=(ListView) rootView.findViewById(R.id.tradeListView);
-        setupListAdapter(listView);
-        setupItemListener(listView);
+            ListView listView = (ListView) rootView.findViewById(R.id.tradeListView);
+            setupListAdapter(listView);
+            setupItemListener(listView);
         return rootView;
     }
 
@@ -72,7 +73,7 @@ public class TradelistFragment extends Fragment {
 
 
     private void setupListAdapter(ListView v){
-        for(int i=0;i<10;i++){
+        for(int i=0;i<30;i++){
             Map<String,String> tmp=new HashMap<>();
             tmp.put("title","金坷垃订单"+i);
             tmp.put("step","[谈判中]");

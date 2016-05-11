@@ -4,10 +4,10 @@
     <item
         android:id="@+id/searchBtn"
         app:showAsAction="always"
-        android:icon="@drawable/search_32"
+        android:icon="@drawable/vector_drawable_search"
         android:title="搜索" />
     <item
-        android:icon="@drawable/add_32"
+        android:icon="@drawable/vector_drawable_add"
         android:title="添加"
         app:showAsAction="always">
         <menu>

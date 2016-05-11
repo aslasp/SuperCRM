@@ -32,7 +32,7 @@ public class TradeListAdapter extends SimpleAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if(position==6){
             View originView=super.getView(position, convertView, parent);
-            ((TextView)originView.findViewById(R.id.list_item_tradelist_title)).setTextColor(ContextCompat.getColor(context,R.color.colorAccent));
+            ((TextView)originView.findViewById(R.id.list_item_tradelist_title)).setTextColor(ContextCompat.getColor(context,R.color.colorImportant));
             return originView;
         }
         return super.getView(position, convertView, parent);

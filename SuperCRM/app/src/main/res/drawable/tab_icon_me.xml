@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:state_checked="false" android:drawable="@drawable/me_32"></item>
-    <item android:state_checked="true" android:drawable="@drawable/me_focus_32"></item>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="false" android:drawable="@drawable/vector_drawable_me"></item>
+    <item android:state_checked="true" android:drawable="@drawable/vector_drawable_me_focus"></item>
 
 </selector>

@@ -4,6 +4,6 @@
     <item
         android:id="@+id/tradeHistoryBtn"
         app:showAsAction="always"
-        android:icon="@drawable/history_32"
+        android:icon="@drawable/vector_drawable_history"
         android:title="过往交易" />
 </menu>

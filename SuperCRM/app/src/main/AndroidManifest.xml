@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/pika"
+        android:icon="@drawable/vector_drawable_crm"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

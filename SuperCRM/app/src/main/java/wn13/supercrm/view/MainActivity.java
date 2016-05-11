@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 import wn13.supercrm.R;
 import wn13.supercrm.view.contacts.AddContactActivity;
 import wn13.supercrm.view.contacts.AddCustomerActivity;
+import wn13.supercrm.view.contacts.ContactTabListFragment;
 import wn13.supercrm.view.contacts.ContactslistFragment;
 import wn13.supercrm.view.me.MelistFragment;
 import wn13.supercrm.view.schedule.AddScheduleActivity;
@@ -22,7 +23,7 @@ import wn13.supercrm.view.trade.TradeHistoryActivity;
 import wn13.supercrm.view.trade.TradelistFragment;
 
 public class MainActivity extends AppCompatActivity{
-    Fragment fragment;
+    Fragment tradeFragment,contactsFragment,scheduleFragment,meFragment;
     String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,12 @@ public class MainActivity extends AppCompatActivity{
 
         Intent intent=getIntent();
         userID=intent.getStringExtra("id");
-        fragment=TradelistFragment.newInstance(userID);
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+        tradeFragment=TradelistFragment.newInstance(userID);
+        contactsFragment= ContactslistFragment.newInstance(userID);
+        scheduleFragment=SchedulelistFragment.newInstance(userID);
+        meFragment=MelistFragment.newInstance(userID);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,tradeFragment).commit();
 
 
         RadioGroup rg=(RadioGroup)findViewById(R.id.radioGroup);
@@ -42,22 +47,18 @@ public class MainActivity extends AppCompatActivity{
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.tradeTabBtn:{
-                        fragment=TradelistFragment.newInstance(userID);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,tradeFragment).commit();
 
                     }break;
                     case R.id.contactsTabBtn:{
-                        fragment=ContactslistFragment.newInstance(userID);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,contactsFragment).commit();
 
                     }break;
                     case R.id.scheduleTabBtn:{
-                        fragment=SchedulelistFragment.newInstance(userID);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,scheduleFragment).commit();
                     }break;
                     case R.id.meTabBtn:{
-                        fragment=MelistFragment.newInstance(userID);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,fragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,meFragment).commit();
                     }break;
                 }
             }
