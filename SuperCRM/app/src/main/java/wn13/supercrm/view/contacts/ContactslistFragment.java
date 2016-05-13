@@ -23,6 +23,7 @@ public class ContactslistFragment extends Fragment {
     private String userID;
 
     private ViewPager viewPager;
+    private ContactTabListFragment customerTab,companyTab;
 
     public ContactslistFragment() {
         // Required empty public constructor
@@ -61,8 +62,15 @@ public class ContactslistFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager){
         MyPagerAdapter adapter=new MyPagerAdapter(getFragmentManager());
-        adapter.addFragment(ContactTabListFragment.newInstance(0),"客户通讯录");
-        adapter.addFragment(ContactTabListFragment.newInstance(1),"公司通讯录");
+        if(customerTab==null){
+            customerTab=ContactTabListFragment.newInstance(0);
+            System.out.println("I am here");
+        }
+        if(companyTab==null){
+            companyTab=ContactTabListFragment.newInstance(1);
+        }
+        adapter.addFragment(customerTab,"客户通讯录");
+        adapter.addFragment(companyTab,"公司通讯录");
         viewPager.setAdapter(adapter);
     }
 
