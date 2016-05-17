@@ -1,13 +1,87 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="wn13.supercrm.view.me.MelistFragment">
+    android:orientation="vertical"
+    tools:context="wn13.supercrm.view.me.MelistFragment"
+    android:weightSum="1">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/profileBtn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="this is me" />
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp"
 
-</FrameLayout>
+        android:padding="5dp"
+
+        android:drawableLeft="@drawable/avatar64"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+
+        android:background="@android:color/white"
+
+         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="fill_horizontal"
+        android:layout_below="@+id/profileBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="5dp"
+            android:drawableTop="@drawable/vector_drawable_goal"
+            android:background="@color/colorPrimaryLight"
+            android:textColor="@android:color/white"
+
+            android:text="业务目标"
+            android:id="@+id/goalBtn"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/statsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:drawableTop="@drawable/vector_drawable_stats"
+            android:background="@color/colorPrimaryLight"
+            android:textColor="@android:color/white"
+            android:text="统计报表"
+
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="5dp"
+            android:drawableTop="@drawable/vector_drawable_report"
+            android:background="@color/colorPrimaryLight"
+            android:textColor="@android:color/white"
+
+            android:text="汇报工作"
+            android:id="@+id/reportBtn"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorImportant"
+        android:textColor="@android:color/white"
+        android:text="退出登录"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="81dp" />
+
+</RelativeLayout>

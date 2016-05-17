@@ -59,9 +59,9 @@ public class TradelistFragment extends Fragment {
         listItems.clear();
         View rootView=inflater.inflate(R.layout.fragment_tradelist, container, false);
         setHasOptionsMenu(true);
-            ListView listView = (ListView) rootView.findViewById(R.id.tradeListView);
-            setupListAdapter(listView);
-            setupItemListener(listView);
+        ListView listView = (ListView) rootView.findViewById(R.id.tradeListView);
+        setupListAdapter(listView);
+        setupItemListener(listView);
         return rootView;
     }
 
@@ -78,6 +78,12 @@ public class TradelistFragment extends Fragment {
             tmp.put("title","金坷垃订单"+i);
             tmp.put("step","[谈判中]");
             tmp.put("customer","南京市第"+i+"中学");
+            if(i==6){
+                tmp.put("important","y");
+            }else{
+                tmp.put("important","n");
+            }
+
             listItems.add(tmp);
         }
         String keyList[]={"title","step","customer"};

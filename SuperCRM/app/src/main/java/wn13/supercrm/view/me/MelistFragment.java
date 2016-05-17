@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import wn13.supercrm.R;
 
@@ -39,6 +40,7 @@ public class MelistFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView=inflater.inflate(R.layout.fragment_melist, container, false);
+        ((Button)rootView.findViewById(R.id.profileBtn)).setText(userID);
         return rootView;
     }
 

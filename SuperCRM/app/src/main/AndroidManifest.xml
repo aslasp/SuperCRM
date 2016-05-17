@@ -24,7 +24,8 @@
         <activity android:name=".view.contacts.AddCustomerActivity" />
         <activity android:name=".view.contacts.AddContactActivity" />
         <activity android:name=".view.trade.TradeHistoryActivity" />
-        <activity android:name=".view.trade.TradeDetailActivity"></activity>
+        <activity android:name=".view.trade.TradeDetailActivity" />
+        <activity android:name=".view.schedule.ScheduleHistoryActivity"></activity>
     </application>
 
 </manifest>

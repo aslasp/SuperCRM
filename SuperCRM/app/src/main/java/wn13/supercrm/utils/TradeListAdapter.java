@@ -29,12 +29,19 @@ public class TradeListAdapter extends SimpleAdapter {
     }
 
     @Override
+    public Object getItem(int position) {
+        return super.getItem(position);
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(position==6){
+
+        if(data.get(position).get("important").equals("y")){
             View originView=super.getView(position, convertView, parent);
             ((TextView)originView.findViewById(R.id.list_item_tradelist_title)).setTextColor(ContextCompat.getColor(context,R.color.colorImportant));
             return originView;
         }
+        convertView=null;
         return super.getView(position, convertView, parent);
     }
 }
