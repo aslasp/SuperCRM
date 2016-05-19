@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     tools:context="wn13.supercrm.view.schedule.SchedulelistFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/scheduleListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="this is schedule" />
+        android:layout_height="match_parent">
+
+    </ListView>
 
 </FrameLayout>
