@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 import wn13.supercrm.R;
 
@@ -39,7 +43,8 @@ public class ContactTabListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact_tab_list, container, false);
+        View rootView=inflater.inflate(R.layout.fragment_contact_tab_list, container, false);
+        ExpandableListView listView=(ExpandableListView)rootView.findViewById(R.id.contactsExpandable);
+        return rootView;
     }
 }
