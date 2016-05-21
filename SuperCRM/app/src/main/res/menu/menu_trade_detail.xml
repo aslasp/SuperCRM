@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/vector_drawable_add"
+        android:title="添加"
+        app:showAsAction="always">
+        <menu>
+            <group>
+                <item android:title="添加跟进记录"
+                    android:id="@+id/addFollowBtn"/>
+                <item android:title="添加合同"
+                    android:id="@+id/addContractBtn"/>
+            </group>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="wn13.supercrm.view.trade.TradeDetailInfoFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_above="@+id/linearLayout"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交易信息"
+        android:textSize="12sp"/>
+    <ListView
+        android:id="@+id/tradeDetailInfoListView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+    </ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="合同信息"
+        android:textSize="12sp"/>
+    <ListView
+        android:id="@+id/tradeDetailContractListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+        <Button
+            android:id="@+id/tradeCloseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="关闭交易"
+            android:textColor="@color/colorImportant"
+            android:background="@android:color/white"/>
+        <Button
+            android:id="@+id/tradeSuccessBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="交易成功"
+            android:textColor="@color/colorSuccess"
+            android:background="@android:color/white"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

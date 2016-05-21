@@ -26,7 +26,9 @@
         <activity android:name=".view.trade.TradeHistoryActivity" />
         <activity android:name=".view.trade.TradeDetailActivity" />
         <activity android:name=".view.schedule.ScheduleHistoryActivity" />
-        <activity android:name=".view.schedule.ScheduleDetailActivity"></activity>
+        <activity android:name=".view.schedule.ScheduleDetailActivity" />
+        <activity android:name=".view.trade.AddContractActivity" />
+        <activity android:name=".view.trade.AddFollowActivity"></activity>
     </application>
 
 </manifest>
