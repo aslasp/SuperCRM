@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Map;
 
 import wn13.supercrm.R;
+import wn13.supercrm.utils.adapters.ContactTabListAdapter;
 
 public class ContactTabListFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,6 +47,27 @@ public class ContactTabListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView=inflater.inflate(R.layout.fragment_contact_tab_list, container, false);
         ExpandableListView listView=(ExpandableListView)rootView.findViewById(R.id.contactsExpandable);
+        setupAdapter(listView);
+        setupChildListener(listView);
         return rootView;
+    }
+
+    private void setupAdapter(ExpandableListView listView){
+        String[] gArr={"南京大学","浙江大学","金陵饭店","先锋书店"};
+        String[][] childArr={{"陈骏","高圆圆","萧亚轩"},{"Taylor Swift","陈光标"},{"谢霆锋","张柏芝","陈冠希","王菲"},{"董明珠","雷军","许巍"}};
+        listView.setAdapter(new ContactTabListAdapter(gArr,childArr,getActivity()));
+    }
+
+    private void setupChildListener(ExpandableListView listView){
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                Toast.makeText(
+                        getActivity(),
+                        "你点击了",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 }

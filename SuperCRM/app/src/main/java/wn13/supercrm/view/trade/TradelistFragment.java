@@ -12,18 +12,15 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import wn13.supercrm.R;
-import wn13.supercrm.utils.TradeListAdapter;
+import wn13.supercrm.utils.adapters.TradeListAdapter;
 
 
 public class TradelistFragment extends Fragment {

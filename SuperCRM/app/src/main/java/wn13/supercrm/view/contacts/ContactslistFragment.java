@@ -50,9 +50,8 @@ public class ContactslistFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView=inflater.inflate(R.layout.fragment_contactslist, container, false);
-        viewPager=(ViewPager)rootView.findViewById(R.id.contactsViewPager);
+        viewPager = (ViewPager) rootView.findViewById(R.id.contactsViewPager);
         setupViewPager(viewPager);
-
         TabLayout tabLayout=(TabLayout) rootView.findViewById(R.id.contactsTabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("客户通讯录"));
         tabLayout.addTab(tabLayout.newTab().setText("公司通讯录"));
@@ -61,14 +60,9 @@ public class ContactslistFragment extends Fragment {
     }
 
     private void setupViewPager(ViewPager viewPager){
-        MyPagerAdapter adapter=new MyPagerAdapter(getFragmentManager());
-        if(customerTab==null){
-            customerTab=ContactTabListFragment.newInstance(0);
-            System.out.println("I am here");
-        }
-        if(companyTab==null){
-            companyTab=ContactTabListFragment.newInstance(1);
-        }
+        MyPagerAdapter adapter=new MyPagerAdapter(getChildFragmentManager());
+        customerTab=ContactTabListFragment.newInstance(0);
+        companyTab=ContactTabListFragment.newInstance(1);
         adapter.addFragment(customerTab,"客户通讯录");
         adapter.addFragment(companyTab,"公司通讯录");
         viewPager.setAdapter(adapter);
