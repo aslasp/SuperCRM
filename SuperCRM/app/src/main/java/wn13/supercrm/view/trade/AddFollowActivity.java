@@ -1,10 +1,8 @@
 package wn13.supercrm.view.trade;
 
-import android.content.Intent;
-import android.opengl.EGLExt;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import java.util.Map;

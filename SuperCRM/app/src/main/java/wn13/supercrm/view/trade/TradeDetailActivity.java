@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +59,11 @@ public class TradeDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:onBackPressed();break;
+            case R.id.addFollowBtn:{
+                Intent i=new Intent(this,AddFollowActivity.class);
+                i.putExtra("info",(Serializable)info);
+                startActivity(i);
+            }break;
 
         }
         return super.onOptionsItemSelected(item);
