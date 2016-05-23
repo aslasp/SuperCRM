@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -51,7 +52,10 @@ public class TradeDetailInfoFragment extends Fragment {
         setupInfoListView(infoListView);
         ListView contractListView=(ListView)rootView.findViewById(R.id.tradeDetailContractListView);
         setupContractListView(contractListView);
-
+        if(info.get("finished").equals("1")){
+            rootView.findViewById(R.id.tradeCloseBtn).setVisibility(View.GONE);
+            rootView.findViewById(R.id.tradeSuccessBtn).setVisibility(View.GONE);
+        }
         return rootView;
     }
 

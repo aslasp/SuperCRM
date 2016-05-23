@@ -74,6 +74,7 @@ public class TradelistFragment extends Fragment {
             Map<String,String> tmp=new HashMap<>();
             tmp.put("title","金坷垃订单"+i);
             tmp.put("step","[谈判中]");
+            tmp.put("finished","0");
             tmp.put("customer","南京市第"+i+"中学");
             if(i==6){
                 tmp.put("important","y");

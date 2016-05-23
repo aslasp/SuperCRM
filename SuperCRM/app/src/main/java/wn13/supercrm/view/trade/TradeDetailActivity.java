@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,12 +49,17 @@ public class TradeDetailActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("跟进记录"));
         tabLayout.setupWithViewPager(viewPager);
 
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_trade_detail, menu);
-        return true;
+        if(info.get("finished").equals("0")) {
+            getMenuInflater().inflate(R.menu.menu_trade_detail, menu);
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -65,6 +72,10 @@ public class TradeDetailActivity extends AppCompatActivity {
                 startActivity(i);
             }break;
 
+            case R.id.addContractBtn:{
+                Intent i=new Intent(this,AddContractActivity.class);
+                startActivity(i);
+            }break;
         }
         return super.onOptionsItemSelected(item);
     }

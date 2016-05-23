@@ -120,7 +120,7 @@
         android:layout_marginLeft="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="12月15日"
+        android:text="请选择日期"
         android:textSize="16sp"
         android:id="@+id/addFollowDate"
         android:layout_above="@+id/addFollowTitleFld"
