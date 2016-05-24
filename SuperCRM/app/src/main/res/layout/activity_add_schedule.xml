@@ -3,19 +3,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="wn13.supercrm.view.schedule.AddScheduleActivity">
 
-    <TextView
+    <ImageButton
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="this is add schedule"
-        android:id="@+id/textView5"
+        android:id="@+id/addScheduleDateBtn"
+        android:background="@drawable/vector_drawable_calendar"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="154dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择日期"
+        android:textSize="16sp"
+        android:id="@+id/addScheduleDateTextView"
+        android:layout_alignBottom="@+id/addScheduleDateBtn"
+        android:layout_toRightOf="@+id/addScheduleDateBtn"
+        android:layout_toEndOf="@+id/addScheduleDateBtn" />
+
+    <ImageButton
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addScheduleTimeBtn"
+        android:background="@drawable/vector_drawable_alarm"
+        android:layout_below="@+id/addScheduleDateTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择时间"
+        android:textSize="16sp"
+        android:id="@+id/addScheduleTimeTextView"
+        android:layout_alignBottom="@+id/addScheduleTimeBtn"
+        android:layout_toRightOf="@+id/addScheduleTimeBtn"
+        android:layout_toEndOf="@+id/addScheduleTimeBtn" />
+
+    <EditText
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addScheduleTitleFld"
+        android:hint="标题"
+        android:layout_below="@+id/addScheduleTimeBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
+
+    <EditText
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:id="@+id/addScheduleTextArea"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/textarea_add_follow"
+        android:hint="详细描述"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/addScheduleTimeBtn"
+        android:layout_centerHorizontal="true" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/addScheduleLinearLayout">
+        <Button
+            android:id="@+id/addScheduleCloseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="返回"
+            android:textColor="@color/colorImportant"
+            android:background="@android:color/white"/>
+        <Button
+            android:id="@+id/addScheduleSubmitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加"
+            android:textColor="@color/colorSuccess"
+            android:background="@android:color/white"/>
+    </LinearLayout>
+
+
 </RelativeLayout>
