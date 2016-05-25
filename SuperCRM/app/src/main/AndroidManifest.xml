@@ -28,7 +28,10 @@
         <activity android:name=".view.schedule.ScheduleHistoryActivity" />
         <activity android:name=".view.schedule.ScheduleDetailActivity" />
         <activity android:name=".view.trade.AddContractActivity" />
-        <activity android:name=".view.trade.AddFollowActivity"></activity>
+        <activity android:name=".view.trade.AddFollowActivity" />
+        <activity android:name=".view.me.GoalActivity" />
+        <activity android:name=".view.me.StatsActivity" />
+        <activity android:name=".view.me.ReportActivity"></activity>
     </application>
 
 </manifest>
