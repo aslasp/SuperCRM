@@ -34,7 +34,7 @@ public class AddTradeActivity extends AppCompatActivity {
     }
 
     private void setupBackBtn(){
-        findViewById(R.id.addCustomerCloseBtn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.addTradeCloseBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
