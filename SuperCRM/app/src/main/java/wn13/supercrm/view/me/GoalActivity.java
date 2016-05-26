@@ -19,6 +19,10 @@ public class GoalActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
+        //设置图表
+        setupChart();
+
+
     }
 
     @Override
@@ -28,5 +32,9 @@ public class GoalActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setupChart(){
+
     }
 }
