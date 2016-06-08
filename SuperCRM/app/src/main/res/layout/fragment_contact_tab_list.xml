@@ -3,11 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="wn13.supercrm.view.contacts.ContactTabListFragment">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <ExpandableListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/contactsExpandable"
+                    android:layout_gravity="left|top" />
+        </android.support.v4.widget.SwipeRefreshLayout>
 
 
-    <ExpandableListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/contactsExpandable"
-        android:layout_gravity="left|top" />
 </FrameLayout>
