@@ -4,11 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="wn13.supercrm.view.trade.TradeHistoryActivity">
-
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/tradeHistoryListSwipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/tradeHistoryListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

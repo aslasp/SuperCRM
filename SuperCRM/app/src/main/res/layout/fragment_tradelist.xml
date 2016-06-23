@@ -3,11 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="wn13.supercrm.view.trade.TradelistFragment">
-
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/tradeListSwipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/tradeListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </FrameLayout>

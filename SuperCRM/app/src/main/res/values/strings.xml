@@ -4,6 +4,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="staff_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_staff_json</string>
+    <string name="customer_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_contacts_json</string>
+    <string name="trade_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_opportunity_json</string>
+    <string name="product_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_product_json</string>
 
 </resources>

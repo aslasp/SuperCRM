@@ -68,7 +68,7 @@
             android:background="@color/colorPrimaryLight"
             android:textColor="@android:color/white"
 
-            android:text="汇报工作"
+            android:text="产品信息"
             android:id="@+id/reportBtn"
             android:layout_weight="1" />
     </LinearLayout>

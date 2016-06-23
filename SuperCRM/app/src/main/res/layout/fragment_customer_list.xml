@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="wn13.supercrm.view.contacts.CustomerListFragment">
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/customerListSwipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/customerListExpandable"
+        android:layout_gravity="left|top" />
+</android.support.v4.widget.SwipeRefreshLayout>
+
+
+</FrameLayout>

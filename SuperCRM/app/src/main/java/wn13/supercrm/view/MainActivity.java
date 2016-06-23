@@ -13,7 +13,6 @@ import android.widget.RadioGroup;
 import wn13.supercrm.R;
 import wn13.supercrm.view.contacts.AddContactActivity;
 import wn13.supercrm.view.contacts.AddCustomerActivity;
-import wn13.supercrm.view.contacts.ContactTabListFragment;
 import wn13.supercrm.view.contacts.ContactslistFragment;
 import wn13.supercrm.view.me.MelistFragment;
 import wn13.supercrm.view.schedule.AddScheduleActivity;

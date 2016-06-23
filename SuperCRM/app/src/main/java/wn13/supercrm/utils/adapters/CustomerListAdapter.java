@@ -8,40 +8,53 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import wn13.supercrm.model.Customer;
+
 /**
  * Created by wangn on 2016/5/21.
  */
-public class ContactTabListAdapter extends BaseExpandableListAdapter {
+public class CustomerListAdapter extends BaseExpandableListAdapter {
 
-    private String[] groupArr;
-    private String[][] childArr;
-
+    ArrayList<String> groupList=new ArrayList<>();
+    ArrayList<ArrayList<Customer>> list=new ArrayList<>();
     private Activity activity;
 
-    public ContactTabListAdapter(String[] g,String[][] c,Activity a){
-        groupArr=g;
-        childArr=c;
+    public CustomerListAdapter(ArrayList<Customer> l, Activity a){
+        for(Customer tmp:l){
+            String tmpStr=tmp.getCustomername();
+            int index=groupList.indexOf(tmpStr);
+            if(index==-1){
+                groupList.add(tmpStr);
+                ArrayList<Customer> newList=new ArrayList<Customer>();
+                newList.add(tmp);
+                list.add(newList);
+            }else{
+                list.get(index).add(tmp);
+            }
+        }
         activity=a;
     }
 
     @Override
     public int getGroupCount() {
-        return groupArr.length;
+        return groupList.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return childArr[groupPosition].length;
+        return list.get(groupPosition).size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return groupArr[groupPosition];
+        return groupList.get(groupPosition);
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return childArr[groupPosition][childPosition];
+        return list.get(groupPosition).get(childPosition);
     }
 
     @Override
@@ -62,12 +75,12 @@ public class ContactTabListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
-        return getGenericView(groupArr[groupPosition],16);
+        return getGenericView(groupList.get(groupPosition),16);
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        return getGenericView(childArr[groupPosition][childPosition],14);
+        return getGenericView(list.get(groupPosition).get(childPosition).getContactsname(),14);
     }
 
     @Override
