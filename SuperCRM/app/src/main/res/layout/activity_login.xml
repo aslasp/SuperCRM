@@ -31,6 +31,7 @@
         android:layout_marginLeft="25dp"
         android:singleLine="true"
         android:hint="请输入用户名"
+        android:text="8108"
         />
 
     <EditText

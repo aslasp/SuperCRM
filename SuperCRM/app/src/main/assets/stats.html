@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./stats.css">
+</head>
+<body class="container">
+
+    <div id="lineChart" style="width:600px;height:500px"></div>
+
+    <div><input type="text" id="yearFld" placeholder="请输入年份"></div>
+    <div><input type="text" id="monthFld" placeholder="请输入月份"></div>
+    <div><button id="statsBtn">查看统计</button></div>
+
+
+
+
+
+    <script type="text/javascript" src="./echarts.common.min.js"></script>
+    <script type="text/javascript" src="./jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $("#statsBtn").click(function(){
+            var year=$("#yearFld").val();
+            var month=$("#monthFld").val();
+            
+            dataGiver.giveData(year,month);
+
+        });
+
+    
+
+        function drawChart(imgData){
+        	var jsonData=JSON.parse(imgData);
+
+        	var dayArr=new Array();
+        	for(var i=1;i<=30;i++){
+        		dayArr.push(i);
+        	}
+       
+        	var myChart = echarts.init(document.getElementById('lineChart'));
+		    option = {
+		       
+		        tooltip : {
+		            trigger: 'axis'
+		        },
+		        toolbox: {
+		            show : true,
+		            feature : {
+		                mark : {show: true},
+		                dataView : {show: true, readOnly: false},
+		                magicType: {show: true, type: ['line', 'bar']},
+		                restore : {show: true},
+		                saveAsImage : {show: true}
+		            }
+		        },
+		        calculable : true,
+		        legend: {
+		            data:['商机量','合同量','预估收入','实际收入'],
+		            x:'left'
+		        },
+		        xAxis : [
+		            {
+		                type : 'category',
+		                data : dayArr
+		            }
+		        ],
+		        yAxis : [
+		            {
+		                type : 'value',
+		                name : '交易量',
+		                min: 0,
+		                max: 200,
+		                axisLabel : {
+		                    formatter: '{value} 笔'
+		                }
+		            },
+		            {
+		                type : 'value',
+		                name : '交易收入',
+		                min: 0,
+		                max: 10000,
+		                axisLabel : {
+		                    formatter: '{value} 元'
+		                }
+		            }
+		        ],
+		        series : [
+
+		            {
+		                name: '商机量',
+		                type: 'bar',
+		                data:jsonData.oppoNumArr
+		            },{
+		                name: '合同量',
+		                type: 'bar',
+		                data:jsonData.conNumArr
+		            },{
+		                name: '预估收入',
+		                type: 'line',
+		                yAxisIndex: 1,
+		                data:jsonData.oppoMoneyArr
+		            },
+		            {
+		                name:'实际收入',
+		                type:'line',
+		                yAxisIndex: 1,
+		                data:jsonData.conMoneyArr
+		            }
+		        ]
+		    };
+		    myChart.setOption(option);
+        }
+    </script>
+</body>
+</html>

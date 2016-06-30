@@ -1,63 +1,157 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="wn13.supercrm.view.trade.TradeDetailInfoFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_above="@+id/linearLayout"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="交易信息"
-        android:textSize="12sp"/>
-    <ListView
-        android:id="@+id/tradeDetailInfoListView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
 
-    </ListView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="合同信息"
-        android:textSize="12sp"/>
-    <ListView
-        android:id="@+id/tradeDetailContractListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
-</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout">
-        <Button
-            android:id="@+id/tradeCloseBtn"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="关闭交易"
-            android:textColor="@color/colorImportant"
-            android:background="@android:color/white"/>
-        <Button
-            android:id="@+id/tradeSuccessBtn"
-            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交易ID" />
+
+            <EditText
+                android:id="@+id/oppoDetailIdET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:editable="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="交易成功"
-            android:textColor="@color/colorSuccess"
-            android:background="@android:color/white"/>
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标题" />
+
+            <EditText
+                android:id="@+id/oppoDetailNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="客户" />
+
+            <EditText
+                android:id="@+id/oppoDetailCustomerET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:editable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预测交易额" />
+
+            <EditText
+                android:id="@+id/oppoDetailEstiMoneyET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交易类型" />
+
+            <Spinner
+                android:id="@+id/oppoDetailTypeSP"
+                android:entries="@array/oppo_type_arr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交易状态" />
+
+            <Spinner
+                android:id="@+id/oppoDetailStatusSP"
+                android:entries="@array/oppo_status_arr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/oppoEditBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/colorSuccess"
+            android:text="提交基本信息变动"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合同信息" />
+
+            <ListView
+                android:id="@+id/oppoDetailContractListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </LinearLayout>
+
+
+
     </LinearLayout>
-
-
-</RelativeLayout>
+</ScrollView>

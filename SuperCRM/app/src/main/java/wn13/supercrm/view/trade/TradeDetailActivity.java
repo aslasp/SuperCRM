@@ -22,23 +22,22 @@ import java.util.List;
 import java.util.Map;
 
 import wn13.supercrm.R;
+import wn13.supercrm.model.Opportunity;
 
 public class TradeDetailActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
-
-    Map<String,String> info;
+    private Opportunity o;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trade_detail);
-        //获得交易信息
-        Intent i=getIntent();
-        info=(Map<String,String>)i.getSerializableExtra("tradeInfo");
+        //获得商机
+        o=(Opportunity)getIntent().getSerializableExtra("oppo");
         //设置ActionBar标题
         ActionBar actionBar=getSupportActionBar();
-        actionBar.setTitle(info.get("title"));
+        actionBar.setTitle(o.getOpportunitytitle());
         actionBar.setDisplayHomeAsUpEnabled(true);
         //设置ViewPager
         viewPager=(ViewPager)findViewById(R.id.tradeDetailViewPager);
@@ -55,7 +54,7 @@ public class TradeDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(info.get("finished").equals("0")) {
+        if(1<=o.getOpportunitystatus()&&o.getOpportunitystatus()<=4) {
             getMenuInflater().inflate(R.menu.menu_trade_detail, menu);
             return true;
         }
@@ -68,12 +67,13 @@ public class TradeDetailActivity extends AppCompatActivity {
             case android.R.id.home:onBackPressed();break;
             case R.id.addFollowBtn:{
                 Intent i=new Intent(this,AddFollowActivity.class);
-                i.putExtra("info",(Serializable)info);
+                i.putExtra("oppo",o);
                 startActivity(i);
             }break;
 
             case R.id.addContractBtn:{
                 Intent i=new Intent(this,AddContractActivity.class);
+                i.putExtra("oppo",o);
                 startActivity(i);
             }break;
         }
@@ -82,8 +82,8 @@ public class TradeDetailActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         MyPagerAdapter adapter=new MyPagerAdapter(getSupportFragmentManager());
-        Fragment infoFragment=TradeDetailInfoFragment.newInstance(info);
-        Fragment recordFragment=TradeDetailRecordFragment.newInstance("");
+        Fragment infoFragment=TradeDetailInfoFragment.newInstance(o);
+        Fragment recordFragment=TradeDetailRecordFragment.newInstance(o);
         adapter.addFragment(infoFragment,"交易信息");
         adapter.addFragment(recordFragment,"跟进记录");
         viewPager.setAdapter(adapter);

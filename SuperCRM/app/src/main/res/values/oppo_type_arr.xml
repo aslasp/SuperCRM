@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="oppo_type_arr">
+        <item>0 普通商机</item>
+        <item>1 重要商机</item>
+    </string-array>
+</resources>

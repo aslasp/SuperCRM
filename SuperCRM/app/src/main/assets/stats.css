@@ -1,0 +1,29 @@
+.container{
+    text-align:center;
+}
+
+#statsBtn{
+	border-radius: 10em;
+	background:#2980B9;
+	border:1px solid #dddddd;
+	color:#ffffff;
+	font-size: 1.2rem;
+	height: 2.5em;
+	width: 10em;
+	outline: none;
+}
+
+input{
+	border:1px solid #dddddd;
+	margin-bottom: 2%;
+	font-size: 1.1rem;
+	border-radius: 4em;
+	height:2em;
+	width: 18em;
+	padding: 1%;
+	outline: none;
+}
+input:focus{
+	border:2px solid #2980B9;
+	background:#FDF5E6;
+}

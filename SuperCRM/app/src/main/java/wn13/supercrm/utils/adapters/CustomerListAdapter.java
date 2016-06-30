@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import wn13.supercrm.R;
+import wn13.supercrm.model.Contacts;
 import wn13.supercrm.model.Customer;
 
 /**
@@ -17,23 +19,23 @@ import wn13.supercrm.model.Customer;
  */
 public class CustomerListAdapter extends BaseExpandableListAdapter {
 
-    ArrayList<String> groupList=new ArrayList<>();
-    ArrayList<ArrayList<Customer>> list=new ArrayList<>();
+    ArrayList<Customer> groupList=new ArrayList<>();
+    ArrayList<ArrayList<Contacts>> list=new ArrayList<>();
     private Activity activity;
 
-    public CustomerListAdapter(ArrayList<Customer> l, Activity a){
-        for(Customer tmp:l){
-            String tmpStr=tmp.getCustomername();
-            int index=groupList.indexOf(tmpStr);
-            if(index==-1){
-                groupList.add(tmpStr);
-                ArrayList<Customer> newList=new ArrayList<Customer>();
-                newList.add(tmp);
-                list.add(newList);
-            }else{
-                list.get(index).add(tmp);
+    public CustomerListAdapter(ArrayList<Customer> c,ArrayList<Contacts> l, Activity a){
+        ArrayList<Integer> gid=new ArrayList<>();
+        for(int i=0;i<c.size();i++){
+            list.add(new ArrayList<Contacts>());
+            gid.add(c.get(i).getCustomerid());
+        }
+        for(Contacts tmpC:l){
+            int index=gid.indexOf(tmpC.getCustomerid());
+            if(index!=-1){
+                list.get(index).add(tmpC);
             }
         }
+        groupList=c;
         activity=a;
     }
 
@@ -75,7 +77,9 @@ public class CustomerListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
-        return getGenericView(groupList.get(groupPosition),16);
+        View v= getGenericView(groupList.get(groupPosition).getCustomername(),16);
+        v.setTag(R.id.contactsTabBtn,groupPosition);
+        return v;
     }
 
     @Override

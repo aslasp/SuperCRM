@@ -6,6 +6,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -65,6 +66,9 @@ public class ReportActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:onBackPressed();break;
+            case R.id.addProductBtn:{
+                startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
+            }break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -106,10 +110,17 @@ public class ReportActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Product p=(Product) v.getAdapter().getItem(position);
-                Intent intent=new Intent();
-                intent.putExtra("product",(Serializable)p);
-                startActivity(new Intent());
+                Intent intent=new Intent(ReportActivity.this,ProductDetailActivity.class);
+                intent.putExtra("product",p);
+                startActivity(intent);
             }
         });
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_product, menu);
+        return true;
     }
 }

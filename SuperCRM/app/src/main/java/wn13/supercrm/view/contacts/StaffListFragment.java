@@ -1,6 +1,7 @@
 package wn13.supercrm.view.contacts;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -84,10 +85,9 @@ public class StaffListFragment extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 Staff staff = (Staff) parent.getExpandableListAdapter().getChild(groupPosition, childPosition);
-                Toast.makeText(
-                        getActivity(),
-                        "你点击了" + staff.getName(),
-                        Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(getActivity(),StaffDetailActivity.class);
+                i.putExtra("s",staff);
+                startActivity(i);
                 return false;
             }
         });

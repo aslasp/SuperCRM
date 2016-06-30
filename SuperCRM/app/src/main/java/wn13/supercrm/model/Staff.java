@@ -1,9 +1,11 @@
 package wn13.supercrm.model;
 
+import java.io.Serializable;
+
 /**
  * Created by wn13 on 2016/6/20.
  */
-public class Staff {
+public class Staff implements Serializable{
     private int staffid;
     /**
      * 与微信userid相对应的标识
@@ -29,7 +31,7 @@ public class Staff {
     private int order;
     private String mobile;
     private String tel;
-    private int gender;
+    private String gender;
     private String email;
     private String weixinid;
     private String avatar;
@@ -141,11 +143,11 @@ public class Staff {
         this.tel = tel;
     }
 
-    public int getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

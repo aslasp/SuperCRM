@@ -16,10 +16,12 @@
                     android:id="@+id/addContactBtn"/>
                 <item android:title="添加客户"
                     android:id="@+id/addCustomerBtn"/>
-                <item android:title="添加日程"
-                    android:id="@+id/addScheduleBtn"/>
+                <!--<item android:title="添加日程"-->
+                    <!--android:id="@+id/addScheduleBtn"/>-->
                 <item android:title="添加商机"
                     android:id="@+id/addTradeBtn"/>
+                <item android:title="添加员工"
+                    android:id="@+id/addStaffBtn"/>
             </group>
         </menu>
     </item>

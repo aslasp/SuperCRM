@@ -1,29 +1,16 @@
 package wn13.supercrm.model;
 
+import java.io.Serializable;
+
 /**
- * Created by wn13 on 2016/6/20.
+ * Created by wn13 on 2016/6/23.
  */
-public class Customer {
-    private int contactsid;
+public class Customer implements Serializable {
     private int customerid;
-    private String contactsname;
-    private int contactsage;
-    /**
-     * 性别：1：男，2：女
-     */
-    private int contactsgender;
-    private String contactsmobile;
-    private String contactstelephone;
-    private String contactsemail;
-    private String contactsaddress;
-    private String contactszipcode;
-    private String contactsqq;
-    private String contactswechat;
-    private String contactswangwang;
-    private String contactsdeptname;
-    private String contactsposition;
-    private String contactsremarks;
     private String customername;
+    /**
+     * 简介
+     */
     private String profile;
     /**
      * 客户类型:1:重要客户；2：一般客户；3：低价值客户
@@ -33,20 +20,11 @@ public class Customer {
      * 当前状态：1：初访；2：意向；3：报价；4：成交；5：暂时搁置
      */
     private int customerstatus;
-    /**
-     * 地区,region表的id字段
-     */
     private int regionid;
-    /**
-     * 上级客户
-     */
     private int parentcustomerid;
-    /**
-     * 客户来源
-     */
     private String customersource;
     /**
-     * 公司规模，默认为0
+     * 公司规模
      */
     private int size;
     private String telephone;
@@ -57,14 +35,22 @@ public class Customer {
     private int staffid;
     private String createdate;
     private String customerremarks;
-
-    public int getContactsid() {
-        return contactsid;
-    }
-
-    public void setContactsid(int contactsid) {
-        this.contactsid = contactsid;
-    }
+    private String userid;
+    private String openid;
+    private String name;
+    private int departmentid;
+    private int leaderflag;
+    private String position;
+    private int order;
+    private String mobile;
+    private String tel;
+    private String gender;
+    private String weixinid;
+    private String avatar;
+    private Object extattr;
+    private int staffstatus;
+    private int enable;
+    private String staffremarks;
 
     public int getCustomerid() {
         return customerid;
@@ -72,118 +58,6 @@ public class Customer {
 
     public void setCustomerid(int customerid) {
         this.customerid = customerid;
-    }
-
-    public String getContactsname() {
-        return contactsname;
-    }
-
-    public void setContactsname(String contactsname) {
-        this.contactsname = contactsname;
-    }
-
-    public int getContactsage() {
-        return contactsage;
-    }
-
-    public void setContactsage(int contactsage) {
-        this.contactsage = contactsage;
-    }
-
-    public int getContactsgender() {
-        return contactsgender;
-    }
-
-    public void setContactsgender(int contactsgender) {
-        this.contactsgender = contactsgender;
-    }
-
-    public String getContactsmobile() {
-        return contactsmobile;
-    }
-
-    public void setContactsmobile(String contactsmobile) {
-        this.contactsmobile = contactsmobile;
-    }
-
-    public String getContactstelephone() {
-        return contactstelephone;
-    }
-
-    public void setContactstelephone(String contactstelephone) {
-        this.contactstelephone = contactstelephone;
-    }
-
-    public String getContactsemail() {
-        return contactsemail;
-    }
-
-    public void setContactsemail(String contactsemail) {
-        this.contactsemail = contactsemail;
-    }
-
-    public String getContactsaddress() {
-        return contactsaddress;
-    }
-
-    public void setContactsaddress(String contactsaddress) {
-        this.contactsaddress = contactsaddress;
-    }
-
-    public String getContactszipcode() {
-        return contactszipcode;
-    }
-
-    public void setContactszipcode(String contactszipcode) {
-        this.contactszipcode = contactszipcode;
-    }
-
-    public String getContactsqq() {
-        return contactsqq;
-    }
-
-    public void setContactsqq(String contactsqq) {
-        this.contactsqq = contactsqq;
-    }
-
-    public String getContactswechat() {
-        return contactswechat;
-    }
-
-    public void setContactswechat(String contactswechat) {
-        this.contactswechat = contactswechat;
-    }
-
-    public String getContactswangwang() {
-        return contactswangwang;
-    }
-
-    public void setContactswangwang(String contactswangwang) {
-        this.contactswangwang = contactswangwang;
-    }
-
-    public String getContactsdeptname() {
-        return contactsdeptname;
-    }
-
-    public void setContactsdeptname(String contactsdeptname) {
-        this.contactsdeptname = contactsdeptname;
-    }
-
-    public String getContactsposition() {
-        return contactsposition;
-    }
-
-    public void setContactsposition(String contactsposition) {
-        this.contactsposition = contactsposition;
-    }
-
-    public String getContactsremarks() {
-        return contactsremarks;
-    }
-
-    public void setContactsremarks(String contactsremarks) {
-        this.contactsremarks = contactsremarks;
     }
 
     public String getCustomername() {
@@ -312,5 +186,133 @@ public class Customer {
 
     public void setCustomerremarks(String customerremarks) {
         this.customerremarks = customerremarks;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDepartmentid() {
+        return departmentid;
+    }
+
+    public void setDepartmentid(int departmentid) {
+        this.departmentid = departmentid;
+    }
+
+    public int getLeaderflag() {
+        return leaderflag;
+    }
+
+    public void setLeaderflag(int leaderflag) {
+        this.leaderflag = leaderflag;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getWeixinid() {
+        return weixinid;
+    }
+
+    public void setWeixinid(String weixinid) {
+        this.weixinid = weixinid;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Object getExtattr() {
+        return extattr;
+    }
+
+    public void setExtattr(Object extattr) {
+        this.extattr = extattr;
+    }
+
+    public int getStaffstatus() {
+        return staffstatus;
+    }
+
+    public void setStaffstatus(int staffstatus) {
+        this.staffstatus = staffstatus;
+    }
+
+    public int getEnable() {
+        return enable;
+    }
+
+    public void setEnable(int enable) {
+        this.enable = enable;
+    }
+
+    public String getStaffremarks() {
+        return staffremarks;
+    }
+
+    public void setStaffremarks(String staffremarks) {
+        this.staffremarks = staffremarks;
     }
 }

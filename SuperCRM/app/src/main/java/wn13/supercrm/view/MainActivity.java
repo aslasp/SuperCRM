@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 import wn13.supercrm.R;
 import wn13.supercrm.view.contacts.AddContactActivity;
 import wn13.supercrm.view.contacts.AddCustomerActivity;
+import wn13.supercrm.view.contacts.AddStaffActivity;
 import wn13.supercrm.view.contacts.ContactslistFragment;
 import wn13.supercrm.view.me.MelistFragment;
 import wn13.supercrm.view.schedule.AddScheduleActivity;
@@ -23,7 +24,7 @@ import wn13.supercrm.view.trade.TradeHistoryActivity;
 import wn13.supercrm.view.trade.TradelistFragment;
 
 public class MainActivity extends AppCompatActivity{
-    Fragment tradeFragment,contactsFragment,scheduleFragment,meFragment;
+    Fragment tradeFragment,contactsFragment,meFragment;
     String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity{
         userID=intent.getStringExtra("id");
         tradeFragment=TradelistFragment.newInstance(userID);
         contactsFragment= ContactslistFragment.newInstance(userID);
-        scheduleFragment=SchedulelistFragment.newInstance(userID);
+        //scheduleFragment=SchedulelistFragment.newInstance(userID);
         meFragment=MelistFragment.newInstance(userID);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.main_content,tradeFragment).commit();
@@ -54,9 +55,9 @@ public class MainActivity extends AppCompatActivity{
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_content,contactsFragment).commit();
 
                     }break;
-                    case R.id.scheduleTabBtn:{
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,scheduleFragment).commit();
-                    }break;
+//                    case R.id.scheduleTabBtn:{
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.main_content,scheduleFragment).commit();
+//                    }break;
                     case R.id.meTabBtn:{
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_content,meFragment).commit();
                     }break;
@@ -88,10 +89,10 @@ public class MainActivity extends AppCompatActivity{
                 i.setClass(MainActivity.this, AddContactActivity.class);
                 startActivity(i);
             }break;
-            case R.id.addScheduleBtn:{
-                i.setClass(MainActivity.this, AddScheduleActivity.class);
-                startActivity(i);
-            }break;
+//            case R.id.addScheduleBtn:{
+//                i.setClass(MainActivity.this, AddScheduleActivity.class);
+//                startActivity(i);
+//            }break;
             case R.id.addCustomerBtn:{
                 i.setClass(MainActivity.this, AddCustomerActivity.class);
                 startActivity(i);
@@ -100,8 +101,12 @@ public class MainActivity extends AppCompatActivity{
                 i.setClass(MainActivity.this, TradeHistoryActivity.class);
                 startActivity(i);
             }break;
-            case R.id.scheduleHistoryBtn:{
-                i.setClass(MainActivity.this, ScheduleHistoryActivity.class);
+//            case R.id.scheduleHistoryBtn:{
+//                i.setClass(MainActivity.this, ScheduleHistoryActivity.class);
+//                startActivity(i);
+//            }break;
+            case R.id.addStaffBtn:{
+                i.setClass(MainActivity.this, AddStaffActivity.class);
                 startActivity(i);
             }break;
         }

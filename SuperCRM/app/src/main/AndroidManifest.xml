@@ -32,10 +32,18 @@
         <activity android:name=".view.schedule.ScheduleDetailActivity" />
         <activity android:name=".view.trade.AddContractActivity" />
         <activity android:name=".view.trade.AddFollowActivity" />
-        <activity android:name=".view.me.GoalActivity" />
-        <activity android:name=".view.me.StatsActivity" />
+        <activity android:name=".view.stats.GoalActivity" />
+        <activity android:name=".view.stats.StatsActivity" />
         <activity android:name=".view.me.ReportActivity" />
-        <activity android:name=".view.me.ProductDetailActivity"></activity>
+        <activity android:name=".view.me.ProductDetailActivity" />
+        <activity android:name=".view.me.AddProductActivity" />
+        <activity android:name=".view.contacts.CustomerDetailActivity" />
+        <activity android:name=".view.contacts.ContactDetailActivity" />
+        <activity android:name=".view.contacts.StaffDetailActivity" />
+        <activity android:name=".view.contacts.AddStaffActivity" />
+        <activity android:name=".view.trade.ContractDetailActivity" />
+        <activity android:name=".view.trade.FollowDetailActivity" />
+
     </application>
 
 </manifest>

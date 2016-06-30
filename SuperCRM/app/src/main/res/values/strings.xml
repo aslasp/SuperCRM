@@ -4,9 +4,47 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="department_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_department_json</string>
+
     <string name="staff_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_staff_json</string>
+    <string name="staff_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/staff_modify_json</string>
+    <string name="staff_del_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/staff_delete_json</string>
+    <string name="staff_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/staff_create_json</string>
+
+
     <string name="customer_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_contacts_json</string>
+    <string name="contact_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/contact_modify_json</string>
+    <string name="contact_del_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/contact_delete_json</string>
+    <string name="contact_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/contact_create_json</string>
+
+
+    <string name="customer_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/customer_modify_json</string>
+    <string name="customer_del_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/customer_delete_json</string>
+    <string name="customer_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/customer_create_json</string>
+    <string name="all_customer_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_customer_json</string>
+
+
     <string name="trade_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_opportunity_json</string>
+    <string name="oppo_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/opportunity_modify_json</string>
+    <string name="oppo_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/opportunity_create_json</string>
+
     <string name="product_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_product_json</string>
+    <string name="product_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/product_modify_json</string>
+    <string name="product_del_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/product_delete_json</string>
+    <string name="product_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/product_create_json</string>
+
+
+    <string name="contract_common_query">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_contract_json</string>
+    <string name="contract_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/contract_modify_json</string>
+    <string name="contract_del_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/contract_delete_json</string>
+    <string name="contract_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/contract_create_json</string>
+
+
+    <string name="follow_add_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/followup_create_json</string>
+    <string name="follow_del_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/followup_delete_json</string>
+    <string name="follow_edit_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/followup_modify_json</string>
+    <string name="follow_query_url">http://nqiwx.mooctest.net:8090/wexin.php/Api/Index/common_followup_json</string>
+
 
 </resources>

@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import wn13.supercrm.R;
+import wn13.supercrm.view.stats.GoalActivity;
+import wn13.supercrm.view.stats.StatsActivity;
 
 public class MelistFragment extends Fragment {
 

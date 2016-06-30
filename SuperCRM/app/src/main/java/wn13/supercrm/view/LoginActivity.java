@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import wn13.supercrm.R;
+import wn13.supercrm.values.Global;
 
 public class LoginActivity extends Activity {
 
@@ -33,6 +34,7 @@ public class LoginActivity extends Activity {
 
     private void loginCheck(){
         String id=idFld.getText().toString();
+        Global.userid=id;
         String pswd=pswdFld.getText().toString();
         Intent intent=new Intent();
         intent.putExtra("id",id);

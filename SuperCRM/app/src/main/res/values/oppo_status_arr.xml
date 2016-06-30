@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="oppo_status_arr">
+        <item>1 初步洽谈</item>
+        <item>2 需求确定</item>
+        <item>3 方案报价</item>
+        <item>4 谈判合同</item>
+        <item>5 赢单</item>
+        <item>6 输单</item>
+    </string-array>
+</resources>

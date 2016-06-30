@@ -6,38 +6,43 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Calendar;
 import java.util.Map;
 
+import okhttp3.Call;
 import wn13.supercrm.R;
+import wn13.supercrm.model.Opportunity;
+import wn13.supercrm.values.Global;
 
 public class AddFollowActivity extends AppCompatActivity {
 
-    private Map<String,String> info;
+    private Opportunity o;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_follow);
+
+        o=(Opportunity)getIntent().getSerializableExtra("oppo");
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("添加跟进记录");
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        info=(Map<String,String>)getIntent().getSerializableExtra("info");
-        TextView tradeNameView=(TextView)findViewById(R.id.addFollowTradeTitleTextView);
-        TextView tradeCustomerView=(TextView)findViewById(R.id.addFollowCustomerTextView);
-        tradeNameView.setText(info.get("title"));
-        tradeCustomerView.setText(info.get("customer"));
-        // 为日期TextView增加监听
-        setupDateView();
-        //返回键
-        setupBackBtn();
-
+        ((EditText)findViewById(R.id.followAddOppoET)).setText(o.getOpportunitytitle());
+        setupSubmitButton();
     }
-
 
 
     @Override
@@ -45,33 +50,41 @@ public class AddFollowActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home:onBackPressed();break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-
-    private void setupDateView(){
-        findViewById(R.id.addFollowDate).setOnClickListener(new View.OnClickListener() {
+    private void setupSubmitButton(){
+        ((Button) findViewById(R.id.followAddBtn)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar cal=Calendar.getInstance();
-                new DatePickerDialog(AddFollowActivity.this, new DatePickerDialog.OnDateSetListener() {
+                OkHttpUtils.post().url((String) getResources().getText(R.string.follow_add_url))
+                        .addParams("sourcetype", String.valueOf(2))
+                        .addParams("sourceid", String.valueOf(o.getOpportunityid()))
+                        .addParams("creatorid", Global.userid)
+                        .addParams("content", ((EditText)findViewById(R.id.followAddContentET)).getText().toString())
+                        .addParams("followupremarks", ((EditText)findViewById(R.id.followAddRemarkET)).getText().toString())
+                        .build().execute(new StringCallback() {
                     @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        TextView dView=(TextView)findViewById(R.id.addFollowDate);
-                        dView.setText(year+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                    public void onError(Call call, Exception e, int i) {
+                        Toast.makeText(getApplicationContext(),
+                                "添加跟进记录出错", Toast.LENGTH_SHORT).show();
                     }
-                }, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-    }
 
-    private void setupBackBtn(){
-        findViewById(R.id.addFollowCloseBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    @Override
+                    public void onResponse(String s, int i) {
+                        try {
+                            JSONObject json = new JSONObject(s);
+                            Toast.makeText(getApplicationContext(),
+                                    ("添加"+(String)json.get("resultdesc")), Toast.LENGTH_SHORT).show();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
                 onBackPressed();
             }
         });
     }
+
 }

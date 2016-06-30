@@ -1,9 +1,11 @@
 package wn13.supercrm.model;
 
+import java.io.Serializable;
+
 /**
  * Created by wn13 on 2016/6/21.
  */
-public class Opportunity {
+public class Opportunity implements Serializable{
     private int opportunityid;
     private String opportunitytitle;
     private int customerid;

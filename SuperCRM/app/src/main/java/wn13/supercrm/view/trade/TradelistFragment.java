@@ -144,9 +144,9 @@ public class TradelistFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Opportunity o=(Opportunity)v.getAdapter().getItem(position);
-                Toast.makeText(getActivity(),
-                        o.getOpportunitytitle(),
-                        Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(getActivity(),TradeDetailActivity.class);
+                i.putExtra("oppo",o);
+                startActivity(i);
             }
         });
     }

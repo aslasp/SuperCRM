@@ -116,9 +116,9 @@ public class TradeHistoryActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Opportunity o=(Opportunity)v.getAdapter().getItem(position);
-                Toast.makeText(TradeHistoryActivity.this,
-                        o.getOpportunitytitle(),
-                        Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(TradeHistoryActivity.this,TradeDetailActivity.class);
+                i.putExtra("oppo",o);
+                startActivity(i);
             }
         });
     }

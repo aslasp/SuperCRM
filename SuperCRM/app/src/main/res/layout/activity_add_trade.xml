@@ -1,120 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="wn13.supercrm.view.trade.AddTradeActivity">
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="wn13.supercrm.view.trade.AddTradeActivity">
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:id="@+id/addTradeLL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="标题："/>
+                android:text="标题" />
 
             <EditText
-                android:id="@+id/addTradeTitleFld"
+                android:id="@+id/oppoAddNameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="请输入交易标题"/>
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="员工ID" />
+
+            <EditText
+                android:id="@+id/oppoAddStaffET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="对应客户："/>
+                android:text="客户" />
+
             <Spinner
-                android:id="@+id/addTradeCustomerSpinner"
+                android:id="@+id/oppoAddCustomerSP"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </Spinner>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="预计销售额："/>
+                android:text="预测交易额" />
 
             <EditText
-                android:id="@+id/addTradeMoneyFld"
+                android:id="@+id/oppoAddMoneyET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="请输入预计销售额"/>
-
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="重要商机："/>
+                android:text="交易类型" />
 
-            <Switch
-                android:layout_width="wrap_content"
+            <Spinner
+                android:id="@+id/oppoAddTypeSP"
+                android:entries="@array/oppo_type_arr"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/addTradeImportantSwitch"/>
-
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
         </LinearLayout>
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/addTradeBtnLL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-        <Button
-            android:id="@+id/addTradeCloseBtn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="返回"
-            android:textColor="@color/colorImportant"
-            android:background="@android:color/white"/>
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交易状态" />
+
+            <Spinner
+                android:id="@+id/oppoAddStatusSP"
+                android:entries="@array/oppo_status_arr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+        </LinearLayout>
+
         <Button
-            android:id="@+id/addTradeSubmitBtn"
-            android:layout_width="wrap_content"
+            android:id="@+id/oppoAddBtn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="提交"
-            android:textColor="@color/colorSuccess"
-            android:background="@android:color/white"/>
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@color/colorSuccess"
+            android:text="新建商机"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>
